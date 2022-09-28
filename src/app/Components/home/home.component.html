@@ -1,0 +1,62 @@
+<app-slider [data]="sliderObject">
+</app-slider>
+<div class="container-xl">
+    <div class="jumbotron">
+        <h1 class="display-4 my-4" id="head">Covid 19 Tracker</h1>
+        <p class="lead">We are covering the World!</p>
+        <hr class="my-4">
+        <p> It acts as a portal for the public to keep track of the latest news development about the COVID-19, alongside collecting data for further analysis..</p>
+    </div>
+    <div class="data">
+        <img src="assets/earth.gif" alt="">
+        <h3>Whole World Data:</h3>
+    </div>
+    <app-dash-cards [active]="totalActive" [recovered]="totalRecovered" [deaths]="totalDeaths" [confirmed]="totalConfirmed"></app-dash-cards>
+    <hr class="my-2">
+    <h3>Countries with More Number of Cases :</h3>
+    <hr>
+    <div class="radios">
+        <div class="form-check form-switch   mx-4">
+            <input class="form-check-input" #c (click)="updateChartJS(c)" checked type="radio" value="c" id="flexCheckDefault1" name="filter">
+            <label class="form-check-label" for="flexCheckDefault1">
+      Confirmed
+    </label>
+        </div>
+        <div class="form-check form-switch   mx-4">
+            <input class="form-check-input" #a (click)="updateChartJS(a)" type="radio" value="a" id="flexCheckDefault" name="filter">
+            <label class="form-check-label" for="flexCheckDefault">
+      Active
+    </label>
+        </div>
+        <div class="form-check form-switch   mx-4">
+            <input class="form-check-input" #d (click)="updateChartJS(d)" type="radio" value="d" id="flexCheckDefault2" name="filter">
+            <label class="form-check-label" for="flexCheckDefault2">
+      Deaths
+    </label>
+        </div>
+        <div class="form-check form-switch   mx-4">
+            <input class="form-check-input" #r (click)="updateChartJS(r)" type="radio" value="r" id="flexCheckDefault3" name="filter">
+            <label class="form-check-label" for="flexCheckDefault3">
+      Recovered
+    </label>
+        </div>
+    </div>
+    <div class="row charts">
+        <div class="col">
+
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col">
+
+            <canvas id="myLineChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <!-- <google-chart [data]="barChart"></google-chart> -->
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+</div>
+<div class="loader" [class.off]="isLoader">
+
+    <div class="spinner-grow text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
