@@ -1,0 +1,64 @@
+// initchart(Case:string){
+//   console.log(Case);
+
+// let dataTable = [];
+// let value;
+// dataTable.push(['Countries','Cases'])
+
+
+
+//   this.globalDataSummary.forEach(cs=>{
+//     if (cs.confirmed > 3000000) {
+
+//     if(Case === "c"){
+
+//       console.log("in case c");
+
+//         value = cs.confirmed;
+//     }  else if(Case === "a"){
+
+//       console.log("in case a");
+
+//       value = cs.active;
+//     }else  if(Case === "d"){
+
+//       console.log("in case d");
+
+//       value = cs.deaths;
+
+//           }else if(Case === "r"){
+
+//             console.log("in case r");
+
+//                  value=cs.recovered;
+//                 }else{
+//       console.log("nothing");
+
+//     }
+//     dataTable.push([cs.country,value]);
+//   }
+
+//     });
+//     console.log(dataTable);
+//     this.dataTable =dataTable;
+
+
+//     this.pieChart = {
+//     chartType: GoogleChartType.PieChart,
+//     dataTable:dataTable,
+//     //firstRowIsData: true,
+//     options: {
+//       height:500,
+//     },
+//   };
+//   this.barChart = {
+//     chartType: GoogleChartType.BarChart,
+//     dataTable:dataTable,
+//     //firstRowIsData: true,
+//     options: {
+//       height:500,
+//     },
+//   };
+
+
+// }
