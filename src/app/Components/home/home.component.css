@@ -1,0 +1,58 @@
+.jumbotron {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.quantity {
+    font-size: 20px !important;
+    font-weight: 100 !important;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.data img {
+    margin: 0 1rem;
+}
+
+i {
+    margin-left: 5px;
+}
+
+.radios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.charts {
+    padding: 1rem;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.charts .col {
+    padding: 5px;
+}
+
+#myChart,
+#myLineChart {
+    max-height: 500px;
+}
+
+@media (max-width:700px) {
+    .radios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:330px) {
+    .radios {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

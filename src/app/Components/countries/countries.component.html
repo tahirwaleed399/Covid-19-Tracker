@@ -1,0 +1,41 @@
+<app-slider [data]="sliderObject">
+</app-slider>
+<div class="container-xl">
+    <div class="jumbotron text-center">
+        <h1 class="display-4 my-4 text-underline my-4 " id="head2">Country Cases</h1>
+    </div>
+    <select class="form-select my-2" #country (change)="countrySet(select.value)" #select aria-label="Default select example">
+      <option value="" defaultSelected>Select the Country</option>
+     <option value="{{con}}" *ngFor="let con of countries">{{con}}</option>
+    </select>
+    <h2 class="my-4">Data of <span class="badge bg-secondary">{{pCountry}}</span></h2>
+    <app-dash-cards [active]="totalActive" [recovered]="totalRecovered" [deaths]="totalDeaths" [confirmed]="totalConfirmed"></app-dash-cards>
+    <div class="table-responsive" style="max-height: 350px; ">
+        <table class="table my-4">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Cases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of countryDateData; index as index">
+                    <th scope="row">{{index}}</th>
+                    <td>{{data.date}}</td>
+                    <td>{{data.cases}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <p class="text-center" *ngIf="countryDateData.length == 0"> No Data </p>
+    </div>
+    <canvas id="myLineChart2" width="400" height="400" style="max-height: 500px;"></canvas>
+</div>
+
+<div class="loader" [class.off]="isLoader">
+
+    <div class="spinner-grow text-info" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
